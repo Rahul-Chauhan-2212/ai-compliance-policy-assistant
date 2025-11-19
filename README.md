@@ -1,5 +1,3 @@
-# ai-compliance-policy-assistant
-
 # AI Compliance &amp; Policy Assistant (ACPA)
 
 A platform that can help companies automatically understand, summarize, monitor, and enforce compliance rules across legal documents, policies, contracts, and audit checklists.
