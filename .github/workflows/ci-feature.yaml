@@ -1,0 +1,48 @@
+name: Feature/Bug CI
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  microservices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '17'
+
+      - run: mvn -B package --file microservices/demo/pom.xml
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - run: |
+          cd frontend/my-react-app
+          npm install
+          npm run build
+
+  data-science:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - run: |
+          cd data-science/fastapi-app
+          pip install -r requirements.txt
+          pytest
+
