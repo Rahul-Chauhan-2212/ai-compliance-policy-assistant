@@ -15,9 +15,9 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'corretto'
-          java-version: '17'
+          java-version: '25'
       - name: Build Package
-        run: mvn -B package --file microservices/demo/pom.xml
+        run: mvn -B package --file microservices/ai-cpa-ms/pom.xml
 
   frontend:
     runs-on: ubuntu-latest
