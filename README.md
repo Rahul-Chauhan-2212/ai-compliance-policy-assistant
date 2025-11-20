@@ -1,4 +1,8 @@
 # AI Compliance &amp; Policy Assistant (ACPA)
+[![Qodana Analysis](https://github.com/Rahul-Chauhan-2212/ai-compliance-policy-assistant/actions/workflows/qodana_code_quality.yml/badge.svg?branch=master)](https://github.com/Rahul-Chauhan-2212/ai-compliance-policy-assistant/actions/workflows/qodana_code_quality.yml)
+[![Dependency Review](https://github.com/Rahul-Chauhan-2212/ai-compliance-policy-assistant/actions/workflows/dependency-review.yaml/badge.svg?branch=master)](https://github.com/Rahul-Chauhan-2212/ai-compliance-policy-assistant/actions/workflows/dependency-review.yaml)
+[![CodeQL Security Scan](https://github.com/Rahul-Chauhan-2212/ai-compliance-policy-assistant/actions/workflows/codeql.yaml/badge.svg?branch=master)](https://github.com/Rahul-Chauhan-2212/ai-compliance-policy-assistant/actions/workflows/codeql.yaml)
+[![Master CI](https://github.com/Rahul-Chauhan-2212/ai-compliance-policy-assistant/actions/workflows/ci-master.yaml/badge.svg?branch=master)](https://github.com/Rahul-Chauhan-2212/ai-compliance-policy-assistant/actions/workflows/ci-master.yaml)
 
 A platform that can help companies automatically understand, summarize, monitor, and enforce
 compliance rules across legal documents, policies, contracts, and audit checklists.

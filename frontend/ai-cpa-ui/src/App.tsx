@@ -4,17 +4,15 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
 
+// <Navbar />
 function App() {
   return (
-    <ThemeProvider>
       <BrowserRouter>
-        <Navbar />
-        <div className="main-container">
+        <main className="main-container">
           <AppRouter />
-        </div>
+        </main>
         <Footer />
       </BrowserRouter>
-    </ThemeProvider>
   );
 }
 
