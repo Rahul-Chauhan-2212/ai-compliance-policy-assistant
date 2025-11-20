@@ -1,5 +1,4 @@
 version: 2
-name: Dependabot Analysis
 updates:
   # -------------------------
   # 1. React (npm / Vite)
@@ -7,7 +6,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/frontend/ai-cpa-ui"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     open-pull-requests-limit: 10
 
   # -------------------------
@@ -16,7 +15,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "/data-science/ai-cpa-ds"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     open-pull-requests-limit: 10
 
   # -------------------------
@@ -25,5 +24,5 @@ updates:
   - package-ecosystem: "maven"
     directory: "/microservices/ai-cpa-ms"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     open-pull-requests-limit: 10
