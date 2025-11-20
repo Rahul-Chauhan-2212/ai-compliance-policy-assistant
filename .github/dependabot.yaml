@@ -1,0 +1,29 @@
+version: 2
+name: Dependabot Analysis
+updates:
+  # -------------------------
+  # 1. React (npm / Vite)
+  # -------------------------
+  - package-ecosystem: "npm"
+    directory: "/frontend/ai-cpa-ui"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  # -------------------------
+  # 2. Python (FastAPI backend)
+  # -------------------------
+  - package-ecosystem: "pip"
+    directory: "/data-science/ai-cpa-ds"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  # -------------------------
+  # 3. Java (Spring Boot backend)
+  # -------------------------
+  - package-ecosystem: "maven"
+    directory: "/microservices/ai-cpa-ms"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10

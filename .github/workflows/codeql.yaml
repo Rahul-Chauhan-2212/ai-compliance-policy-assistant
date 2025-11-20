@@ -1,0 +1,62 @@
+name: CodeQL Security Scan
+
+on:
+  push:
+    branches: ["master", "feature/**", "bugs/**"]
+  schedule:
+    - cron: "0 2 * * 1"
+
+jobs:
+  analyze:
+    name: CodeQL Analysis
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["typescript", "python", "java"]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+
+      # ---------- JAVA BUILD ----------
+      - name: Set up JDK
+        if: matrix.language == 'java'
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '25'
+
+      - name: Build Java backend
+        if: matrix.language == 'java'
+        run: |
+          cd microservices/ai-cpa-ms
+          mvn -B package
+
+      # ---------- INSTALL NODE (TS) ----------
+      - name: Install Node dependencies
+        if: matrix.language == 'typescript'
+        run: |
+          cd frontend/ai-cpa-ui
+          npm install
+
+      # ---------- INSTALL PYTHON ----------
+      - name: Install Python dependencies
+        if: matrix.language == 'python'
+        run: |
+          cd data-science/ai-cpa-ds
+          pip install -r requirements.txt
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v4
