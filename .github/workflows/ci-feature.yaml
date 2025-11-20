@@ -31,7 +31,7 @@ jobs:
           node-version: "24"
       - name: Build App
         run: |
-          cd frontend/my-react-app
+          cd frontend/ai-cpa-ui
           npm install
           npm run build
 
